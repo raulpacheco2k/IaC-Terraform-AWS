@@ -1,2 +1,2 @@
 environment = "development"
-bucket_name = "IaC-Terraform-AWS"
+bucket_name = "iac-terraform-aws"
