@@ -3,5 +3,5 @@ resource "aws_s3_bucket" "bucket" {
 }
 
 locals {
-  bucket_name = "${var.bucket_name}-${var.environment}"
+  bucket_name = "${var.project_name}-${var.environment}"
 }

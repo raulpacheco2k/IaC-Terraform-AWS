@@ -1,8 +1,21 @@
-variable "bucket_name" {
+variable "environment" {
+  type        = string
+  description = "development ou production"
+}
+
+variable "region" {
+  type    = string
+  default = "sa-east-1"
+}
+
+variable "project_name" {
   type = string
 }
 
-variable "environment" {
+variable "managedby" {
   type = string
-  description = "development ou production"
+}
+
+variable "owner" {
+  type = string
 }
