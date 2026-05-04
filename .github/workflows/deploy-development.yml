@@ -17,4 +17,3 @@ jobs:
             aws-region: "sa-east-1"
             aws-assume-role-arn: "arn:aws:iam::773012663624:role/github-actions-raulpacheco2k"
             aws-s3-terraform-state-file: "raulpacheco2k-sa-east-1-terraform-state-file"
-            aws-dynamodb-terraform-lock: "raulpacheco2k-sa-east-1-terraform-lock"

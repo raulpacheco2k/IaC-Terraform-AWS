@@ -15,9 +15,6 @@ on:
             aws-s3-terraform-state-file:
                 type: string
                 required: true
-            aws-dynamodb-terraform-lock:
-                type: string
-                required: true
 
 jobs:
     terraform:
@@ -33,7 +30,7 @@ jobs:
             - name: Setup Terraform
               uses: hashicorp/setup-terraform@v4
               with:
-                  terraform_version: 1.14.6
+                  terraform_version: 1.15.1
 
             - name: Configure AWS Credentials
               uses: aws-actions/configure-aws-credentials@v6
@@ -55,7 +52,7 @@ jobs:
                     -backend-config="bucket=${{ inputs.aws-s3-terraform-state-file }}" \
                     -backend-config="key=${{ github.event.repository.name }}" \
                     -backend-config="region=${{ inputs.aws-region }}" \
-                    -backend-config="dynamodb_table=${{ inputs.aws-dynamodb-terraform-lock }}"
+                    -backend-config="use_lockfile=true"
 
             - name: Terraform Validate
               working-directory: ./infrastructure/terraform
